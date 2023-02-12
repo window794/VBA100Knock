@@ -18,6 +18,11 @@ Sub VBA100_14()
     
     Worksheets(1).Activate
 
+    With Application
+        .ScreenUpdating = True
+        .Calculation = xlCalculationAutomatic '自動計算に戻す
+    End With
+
 End Sub
 
 Sub deleteSheet(ByVal ws As Worksheet)
@@ -28,7 +33,7 @@ Sub deleteSheet(ByVal ws As Worksheet)
         .Visible = xlSheetVisible 'VeryHidden対策
         .Delete
     End With
-    
+
     Application.DisplayAlerts = True
     
 End Sub
